@@ -23,7 +23,6 @@ namespace Sharelane_Automation.Tests
             CheckoutPage = new CheckoutPage(Driver);
             var standartUser = UserBuilder.StandartUser;
             string email = SignupPage.GenerateEmailForLogin();
-            //string password = "1111";
             LoginPage.UserLogin(email, standartUser.Password);
         }
 
@@ -33,7 +32,7 @@ namespace Sharelane_Automation.Tests
             string bookTitle = "The Moon and Sixpence";
             var quantity = 1;
             var cardType = "MasterCard";
-            var cardNumber = "1111111111112957"; //need to change every 1 hour (https://sharelane.com/cgi-bin/get_credit_card.py)
+            var cardNumber = "1111111111113481"; //need to change every 1 hour (https://sharelane.com/cgi-bin/get_credit_card.py)
             CartPage.AddBookToShoppingCart(bookTitle, quantity);
             CartPage.ProceedToCheckoutButtonClick();
             CheckoutPage.ChooseCardType(cardType);

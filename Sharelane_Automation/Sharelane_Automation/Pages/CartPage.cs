@@ -7,7 +7,6 @@ namespace Sharelane_Automation.Pages
 {
     public class CartPage : BasePage
     {
-
         By shoppingCartLinkLocator = By.XPath("//a[@href='./shopping_cart.py']");
         By quantityFieldLocator = By.Name("q");
         By updateButtonLocator = By.XPath("//input[@value='Update']");

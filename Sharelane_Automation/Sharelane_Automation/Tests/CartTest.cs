@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using Core.Utilites;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 using Sharelane_Automation.Pages;
@@ -17,9 +18,9 @@ namespace Sharelane_Automation.Tests
             HomePage = new HomePage(Driver);
             BookPage = new BookPage(Driver);
             CartPage = new CartPage(Driver);
+            var standartUser = UserBuilder.StandartUser;
             string email = SignupPage.GenerateEmailForLogin();
-            string password = "1111";
-            LoginPage.UserLogin(email, password);
+            LoginPage.UserLogin(email, standartUser.Password);
         }
 
         [TestCase("The Power", 1, 0)]

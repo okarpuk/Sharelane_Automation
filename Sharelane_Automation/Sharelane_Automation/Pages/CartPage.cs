@@ -21,49 +21,49 @@ namespace Sharelane_Automation.Pages
 
         public void ShoppingCartLinkClick()
         {
-            ChromeDriver.FindElement(shoppingCartLinkLocator).Click();
+            Driver.FindElement(shoppingCartLinkLocator).Click();
         }
 
         public void QuantityInput(int quantity)
         {
-            ChromeDriver.FindElement(quantityFieldLocator).Clear();
-            ChromeDriver.FindElement(quantityFieldLocator).SendKeys(Convert.ToString(quantity));
+            Driver.FindElement(quantityFieldLocator).Clear();
+            Driver.FindElement(quantityFieldLocator).SendKeys(Convert.ToString(quantity));
         }
 
         public void UpdateButtonClick()
         {
-            ChromeDriver.FindElement(updateButtonLocator).Click();
+            Driver.FindElement(updateButtonLocator).Click();
         }
 
         public void ProceedToCheckoutButtonClick()
         {
-            ChromeDriver.FindElement(proceedToCheckoutButtonLocator).Click();
+            Driver.FindElement(proceedToCheckoutButtonLocator).Click();
         }
 
         public string Price()
         {
-            return ChromeDriver.FindElement(priceLocator).Text.Replace(".", ",");
+            return Driver.FindElement(priceLocator).Text.Replace(".", ",");
         }
 
         public string PercentDiscount()
         {
-            return ChromeDriver.FindElement(percentDiscountLocator).Text;
+            return Driver.FindElement(percentDiscountLocator).Text;
         }
 
         public string ValueDiscount()
         {
-            return ChromeDriver.FindElement(valueDiscountLocator).Text.Replace(".", ",");
+            return Driver.FindElement(valueDiscountLocator).Text.Replace(".", ",");
         }
 
         public string TotalPrice()
         {
-            return ChromeDriver.FindElement(totalLocator).Text.Replace(".", ",");
+            return Driver.FindElement(totalLocator).Text.Replace(".", ",");
         }
 
         public void AddBookToShoppingCart(string bookName, int quantity)
         {
-            new HomePage(ChromeDriver).SearchByBookTitle(bookName);
-            new BookPage(ChromeDriver).AddToCartButtonClick();
+            new HomePage(Driver).SearchByBookTitle(bookName);
+            new BookPage(Driver).AddToCartButtonClick();
             ShoppingCartLinkClick();
             QuantityInput(quantity);
             UpdateButtonClick();

@@ -14,24 +14,24 @@ namespace Sharelane_Automation.Pages
 
         public void EnterBookTitle(string bookTitle)
         {
-            ChromeDriver.FindElement(SearchFieldLocator).SendKeys(bookTitle);
+            Driver.FindElement(SearchFieldLocator).SendKeys(bookTitle);
         }
 
         public void SearchButtonClick()
         {
-            ChromeDriver.FindElement(SearchButtonLocator).Click();
+            Driver.FindElement(SearchButtonLocator).Click();
         }
 
         public BookPage SearchByBookTitle(string bookTitle)
         {
             EnterBookTitle(bookTitle);
             SearchButtonClick();
-            return new BookPage(ChromeDriver);
+            return new BookPage(Driver);
         }
 
         public string TitleLengthLessThan4Symbols()
         {
-            return ChromeDriver.FindElement(TitleLengthLessThan4SymbolsLocator).Text;
+            return Driver.FindElement(TitleLengthLessThan4SymbolsLocator).Text;
         }
     }
 }

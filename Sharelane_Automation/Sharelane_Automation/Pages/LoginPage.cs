@@ -15,22 +15,22 @@ namespace Sharelane_Automation.Pages
 
         public void EnterEmail(string email)
         {
-            ChromeDriver.FindElement(EmailFieldLocator).SendKeys(email);
+            Driver.FindElement(EmailFieldLocator).SendKeys(email);
         }
 
         public void EnterPassword(string password)
         {
-            ChromeDriver.FindElement(PasswordFieldLocator).SendKeys(password);
+            Driver.FindElement(PasswordFieldLocator).SendKeys(password);
         }
 
         public void LoginButtonClick()
         {
-            ChromeDriver.FindElement(LoginButtonLocator).Click();
+            Driver.FindElement(LoginButtonLocator).Click();
         }
 
         public void UserLogin(string email = "", string password = "")
         {
-            ChromeDriver.Navigate().GoToUrl("https://www.sharelane.com/cgi-bin/main.py");
+            Driver.Navigate().GoToUrl("https://www.sharelane.com/cgi-bin/main.py");
             EnterEmail(email);
             EnterPassword(password);
             LoginButtonClick();
@@ -38,8 +38,8 @@ namespace Sharelane_Automation.Pages
 
         public string GetErrorMessage()
         {
-            Assert.That(ChromeDriver.FindElement(ErrorMessageLocator).Displayed);
-            return ChromeDriver.FindElement(ErrorMessageLocator).Text;
+            Assert.That(Driver.FindElement(ErrorMessageLocator).Displayed);
+            return Driver.FindElement(ErrorMessageLocator).Text;
         }
     }
 }

@@ -16,29 +16,29 @@ namespace Sharelane_Automation.Pages
 
         public void ChooseCardType(string selection)
         {
-            var dropDown = ChromeDriver.FindElement(cardTypeDropDownLocator);
+            var dropDown = Driver.FindElement(cardTypeDropDownLocator);
             var selectType = new SelectElement(dropDown);
             selectType.SelectByText(selection);
         }
 
         public void EnterCardNumber(string cardNumber)
         {
-            ChromeDriver.FindElement(cardNumberFieldLocator).SendKeys(cardNumber);
+            Driver.FindElement(cardNumberFieldLocator).SendKeys(cardNumber);
         }
 
         public void ClickMakePaymentButton()
         {
-            ChromeDriver.FindElement(makePaymentButtonLocator).Click();
+            Driver.FindElement(makePaymentButtonLocator).Click();
         }
 
         public bool IsOrderSuccessful()
         {
-            return ChromeDriver.FindElement(successfulOrderMessageLocator).Displayed;
+            return Driver.FindElement(successfulOrderMessageLocator).Displayed;
         }
 
         public string IsOrderIdDisplays()
         {
-            var orderId = ChromeDriver.FindElement(orderIdLocator).Text;
+            var orderId = Driver.FindElement(orderIdLocator).Text;
             return orderId;
         }
     }

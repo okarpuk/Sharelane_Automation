@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<RunSettings>
+    <!-- Parameters used by tests as runtime -->
+    <TestRunParameters>
+        <Parameter name="Browser" value="headless" />
+        <Parameter name="UserName" value="test@test.test" />
+        <Parameter name="UserPassword" value="1111" />
+
+    </TestRunParameters>
+
+</RunSettings>

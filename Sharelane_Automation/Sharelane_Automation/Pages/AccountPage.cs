@@ -15,7 +15,7 @@ namespace Sharelane_Automation.Pages
 
         public bool IsLogoutLinkDisplays()
         {
-            return ChromeDriver.FindElement(LogoutLinkLocator).Displayed;
+            return Driver.FindElement(LogoutLinkLocator).Displayed;
         }
     }
 }

@@ -38,7 +38,7 @@ namespace Sharelane_Automation.Tests
         [TestCase("The Power", 5000, 7)]
         [TestCase("The Power", 9999, 7)]
         [TestCase("The Power", 10000, 8)]
-        
+
         [Test]
         public void Shopping_Cart_Test_1_IsDiscountPercentCorrect(string bookTitle, int quantity, decimal discountPercentExpected)
         {

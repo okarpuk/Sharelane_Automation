@@ -12,7 +12,9 @@ namespace Core.Utilites
         public static User StandartUser => new User
         {
             Name = TestContext.Parameters.Get("UserName"),
+            InvalidName = TestContext.Parameters.Get("InvalidUserName"),
             Password = TestContext.Parameters.Get("UserPassword"),
+            InvalidPassword = TestContext.Parameters.Get("InvalidUserPassword"),
         };
     }
 }

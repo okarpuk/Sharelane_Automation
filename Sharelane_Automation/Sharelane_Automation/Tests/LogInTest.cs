@@ -23,19 +23,18 @@ namespace Sharelane_Automation.Tests
         public void Login_Test_2_InvalidEmail()
         {
             var standartUser = UserBuilder.StandartUser;
-            string email = "test@@test.test";
             string errorText = "Oops, error. Email and/or password don't match our records";
-            LoginPage.UserLogin(email, standartUser.Password);
+            LoginPage.UserLogin(standartUser.InvalidName, standartUser.Password);
             Assert.AreEqual(LoginPage.GetErrorMessage(), errorText);
         }
 
         [Test]
         public void Login_Test_3_InvalidPassword()
         {
+            var standartUser = UserBuilder.StandartUser;
             string email = SignupPage.GenerateEmailForLogin();
-            string password = "12345";
             string errorText = "Oops, error. Email and/or password don't match our records";
-            LoginPage.UserLogin(password: password);
+            LoginPage.UserLogin(email, standartUser.InvalidPassword);
             Assert.AreEqual(LoginPage.GetErrorMessage(), errorText);
         }
     }

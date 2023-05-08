@@ -9,6 +9,8 @@ namespace Core.Utilites
     public class User
     {
         public string Name { get; set; }
+        public string InvalidName { get; set; }
         public string Password { get; set; }
+        public string InvalidPassword { get; set; }
     }
 }

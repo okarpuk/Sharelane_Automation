@@ -4,8 +4,9 @@
     <TestRunParameters>
         <Parameter name="Browser" value="headless" />
         <Parameter name="UserName" value="test@test.test" />
+		<Parameter name="InvalidUserName" value="test@@test.test" />
         <Parameter name="UserPassword" value="1111" />
-
+		<Parameter name="InvalidUserPassword" value="1234" />
     </TestRunParameters>
 
 </RunSettings>

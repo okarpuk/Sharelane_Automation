@@ -28,9 +28,9 @@ namespace Sharelane_Automation.Tests
         [Test]
         public void Search_Test_2_BookTitleLengthLessThan4Symbols()
         {
-            string bookName = "Qwe";
+            string bookTitle = "Qwe";
             var expectedMessage = "Please, note that current MySQL settings don't allow searches for words containing less than 4 chars";
-            HomePage.SearchByBookTitle(bookName);
+            HomePage.SearchByBookTitle(bookTitle);
             Assert.That(expectedMessage, Is.EqualTo(HomePage.TitleLengthLessThan4Symbols()));
         }
     }
